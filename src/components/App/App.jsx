@@ -36,8 +36,12 @@ function App() {
     <div className={css.app}>
       <h1>Phonebook</h1>
       <ContactForm onSubmit={addContact} />
-      <SearchBox value={searchQuery} onSearch={setSearchQuery} />
-      <ContactList contactList={filteredContacts} onDelete={deleteContact} />
+      {!!contactList.length && (
+        <>
+          <SearchBox value={searchQuery} onSearch={setSearchQuery} />
+          <ContactList contactList={filteredContacts} onDelete={deleteContact} />
+        </>
+      )}
     </div>
   );
 }
