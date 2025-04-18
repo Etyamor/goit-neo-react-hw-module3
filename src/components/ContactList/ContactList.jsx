@@ -6,7 +6,11 @@ function ContactList({ contactList, onDelete }) {
     <ul className={css["contact-list"]}>
       {contactList.map((contact) => (
         <li key={contact.id}>
-          <Contact name={contact.name} number={contact.number} onDelete={() => onDelete(contact.id)} />
+          <Contact
+            name={contact.name}
+            number={contact.number}
+            onDelete={() => onDelete(contact.id)}
+          />
         </li>
       ))}
     </ul>

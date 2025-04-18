@@ -8,9 +8,7 @@ import ContactForm from "../ContactForm/ContactForm.jsx";
 function App() {
   const [contactList, setContactList] = useState(() => {
     const savedContactList = localStorage.getItem("contactList");
-    return savedContactList
-      ? JSON.parse(savedContactList)
-      : initialContactList;
+    return savedContactList ? JSON.parse(savedContactList) : initialContactList;
   });
   const [searchQuery, setSearchQuery] = useState("");
 
@@ -24,7 +22,7 @@ function App() {
     setContactList((prevContactList) => {
       return prevContactList.filter((contact) => contact.id !== contactId);
     });
-  }
+  };
 
   const filteredContacts = contactList.filter((contact) => {
     return contact.name.toLowerCase().includes(searchQuery.toLowerCase());
